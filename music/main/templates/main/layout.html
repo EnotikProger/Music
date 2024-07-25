@@ -5,19 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
+   
+    <title>{% block meta_title %}{% endblock %}</title>
+    
     <link rel="stylesheet" href="{% static 'main/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'main/css/media.css' %}">
-    <link rel="stylesheet" href="{% static 'main/css/personal.css' %}">
-    <link rel="stylesheet" href="{% static 'main/libs/choices.min.css' %}">
-    <link rel="stylesheet" href="{% static 'main/libs/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/media.css' %}"> 
 </head>
 
-	{% block index %}
-
-	{% endblock %}
-
-	{% block personal %}
+	{% block body %}
 
 	{% endblock %}
