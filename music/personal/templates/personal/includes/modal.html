@@ -1,0 +1,63 @@
+<div class="modal" id="modal">
+            <div class="modal__body">
+                <button class="btn modal__close" id="modalClose">
+                    <span class="modal__close--line"></span>
+                    <span class="modal__close--line"></span>
+                </button>
+                <div class="modal__top">
+                    <button class="btn modal__btn active" id="loginBtn">Вход</button>
+                    <button class="btn modal__btn" id="registerBtn">Регистрация</button>
+                </div>
+                <input class="modal__checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                <label for="reg-log"></label>
+                <div class="modal__wrap">
+                    <div class="modal__inner">
+                        <div class="card-front">
+                            <div class="center-wrap">
+                                <form class="modal__form form" action="POST">
+                                    <label class="form__label" for="email">
+                                        Ваш логин (адрес электронной почты)
+                                        <input class="form__input" type="email" name="email" id="email" required
+                                            placeholder="Введите почту">
+                                        <span class="form__error">Поле обязательно для заполнения</span>
+                                    </label>
+                                    <label class="form__label" for="email">
+                                        Пароль
+                                        <input class="form__input" type="password" name="password" id="password"
+                                            required placeholder="Пароль" autocomplete="off">
+                                        <span class="form__error">Поле обязательно для заполнения</span>
+                                    </label>
+                                    <button class="btn form__btn" type="submit">Войти</button>
+                                    <a href="#" class="form__link">Забыли пароль?</a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="center-wrap">
+                                <form class="modal__form form hidden" action="POST">
+                                    <label class="form__label" for="email">
+                                        Ваш логин (адрес электронной почты)
+                                        <input class="form__input" type="email" name="email" id="newEmail" required
+                                            placeholder="Введите почту">
+                                        <span class="form__error">Поле обязательно для заполнения</span>
+                                    </label>
+                                    <label class="form__label" for="email">
+                                        Пароль
+                                        <input class="form__input" type="password" name="password" id="newPassword"
+                                            required placeholder="Пароль" autocomplete="off">
+                                        <span class="form__error">Поле обязательно для заполнения</span>
+                                    </label>
+                                    <label class="form__label" for="email">
+                                        Повторите пароль
+                                        <input class="form__input" type="password" name="password" id="rePassword"
+                                            required placeholder="Пароль" autocomplete="off">
+                                        <span class="form__error">Поле обязательно для заполнения</span>
+                                    </label>
+                                    <button class="btn form__btn" type="submit">Зарегистрироваться</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

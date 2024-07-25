@@ -1,0 +1,94 @@
+{% load static %}
+
+ <div class="personal__catalog section__content" data-content="catalog">
+    <section class="catalog">
+        <div class="catalog__header">
+            <h5 class="catalog__title">Мой каталог</h5>
+            <span class="catalog__header--text">Статистика</span>
+            <select class="catalog__filter" name="filtr" id="filter">
+                <option value="autor">По исполнителю</option>
+                <option value="name">По названию</option>
+                <option value="status">По статусу</option>
+            </select>
+        </div>
+        <div class="catalog__list">
+            <div class="catalog__item">
+                <div class="catalog__item--info">
+                    <img class="catalog__item--img" src="{% static 'main/img/personal_page/albums/Miller.jpg' %}"
+                        alt="Обложка песни">
+                    <div class="catalog__item--content">
+                        <h5 class="catalog__item--name">Название песни</h5>
+                        <span class="catalog__item--autor">Имя Исполнителя</span>
+                        <span class="catalog__item--date">15.03.24</span>
+                    </div>
+                </div>
+                <div class="catalog__item--inner">
+                    <div class="catalog__item--status">
+                        <span class="catalog__item--text">ожидание</span>
+                    </div>
+                    <div class="catalog__item--box">
+                        <p class="catalog__item--descr">UPC</p>
+                        <p class="catalog__item--descr">IRSC</p>
+                    </div>
+                </div>
+                <div class="catalog__item--actions">
+                    <button class="catalog__item--pay">Оплатить</button>
+                    <div class="catalog__item--buttons">
+                        <button class="btn catalog__item--btn" title="Редактировать">
+                            <svg class="catalog__item--icon">
+                                <use xlink:href="#change"></use>
+                            </svg>
+                        </button>
+                        <button class="btn catalog__item--btn" title="Удалить">
+                            <svg class="catalog__item--icon">
+                                <use xlink:href="#delete"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <div class="catalog__item--info">
+                    <img class="catalog__item--img" src="{% static 'main/img/personal_page/albums/Miller.jpg' %}"
+                        alt="Обложка песни">
+                    <div class="catalog__item--content">
+                        <h5 class="catalog__item--name">Название песни</h5>
+                        <span class="catalog__item--autor">Имя Исполнителя</span>
+                        <span class="catalog__item--date">15.03.24</span>
+                    </div>
+                </div>
+                <div class="catalog__item--inner">
+                    <div class="catalog__item--status">
+                        <span class="catalog__item--text green">загружено</span>
+                    </div>
+                </div>
+                <div class="catalog__item--actions">
+                    <div class="catalog__item--buttons">
+                        <button class="btn catalog__item--btn" title="Ссылка">
+                            <svg class="catalog__item--icon">
+                                <use xlink:href="#link"></use>
+                            </svg>
+                        </button>
+                        <button class="btn catalog__item--btn" title="Статистика">
+                            <svg class="catalog__item--icon">
+                                <use xlink:href="#static"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="catalog__item--buttons">
+                        <button class="btn catalog__item--btn" title="Редактировать">
+                            <svg class="catalog__item--icon">
+                                <use xlink:href="#change"></use>
+                            </svg>
+                        </button>
+                        <button class="btn catalog__item--btn" title="Удалить">
+                            <svg class="catalog__item--icon">
+                                <use xlink:href="#delete"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

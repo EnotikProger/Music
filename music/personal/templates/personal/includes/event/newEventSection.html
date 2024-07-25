@@ -1,0 +1,88 @@
+{% load static %}
+
+<section class="personal-section newEvent">
+    <h2 class="personal-section__title">События</h2>
+    <div class="newEvent__cards">
+        <div class="event-card">
+            <button class="btn event-card__reg">
+                <svg class="event-card__icon">
+                    <use xlink:href="#register"></use>
+                </svg>
+                <span>Регистрация</span>
+            </button>
+            <a class="event-card__link" href="#">
+                <img src="{% static 'main/img/personal_page/albums/Kancler.webp' %}" alt=""
+                    class="event-card__img">
+            </a>
+            <div class="event-card__body">
+                <h4 class="event-card__title">название события</h4>
+                <p class="event-card__descr">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Deserunt, dolorum.</p>
+
+                <div class="event-card__ations">
+                    <div class="event-card__price">
+                        <svg class="event-card__prize">
+                            <use xlink:href="#prize"></use>
+                        </svg>
+                        <span>20000</span>
+                    </div>
+                    <div class="event-card__icons">
+                        <button class="btn event-card__btn like">
+                            <svg class="event-card__icon event-card__icon--like">
+                                <use xlink:href="#like"></use>
+                            </svg>
+                        </button>
+                        <button class="btn event-card__btn">
+                            <svg class="event-card__icon event-card__icon--comment">
+                                <use xlink:href="#comment"></use>
+                            </svg>
+                        </button>
+                        <button class="btn event-card__btn">
+                            <svg class="event-card__icon event-card__icon--link">
+                                <use xlink:href="#link"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="event-card">
+            <a class="event-card__link" href="#">
+                <img src="{% static 'main/img/personal_page/albums/Miller.jpg' %}" alt=""
+                    class="event-card__img">
+            </a>
+            <div class="event-card__body">
+                <h4 class="event-card__title">название события</h4>
+                <p class="event-card__descr">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Eveniet tempore excepturi assumenda hic temporibus repellendus rem!
+                    Quod quis ullam amet.</p>
+
+                <div class="event-card__ations">
+                    <div class="event-card__price">
+                        <svg class="event-card__prize">
+                            <use xlink:href="#prize"></use>
+                        </svg>
+                        <span>12 000</span>
+                    </div>
+                    <div class="event-card__icons">
+                        <button class="btn event-card__btn">
+                            <svg class="event-card__icon event-card__icon--like">
+                                <use xlink:href="#like"></use>
+                            </svg>
+                        </button>
+                        <button class="btn event-card__btn">
+                            <svg class="event-card__icon event-card__icon--comment">
+                                <use xlink:href="#comment"></use>
+                            </svg>
+                        </button>
+                        <button class="btn event-card__btn">
+                            <svg class="event-card__icon event-card__icon--link">
+                                <use xlink:href="#link"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

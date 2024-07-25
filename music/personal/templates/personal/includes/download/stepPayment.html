@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="step-payment step__section section-hidden" data-step="6">
+    <div class="payment__top">
+        <div class="payment__body">
+            <img class="payment__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
+            <div class="payment__content">
+                <h5 class="payment__name">Имя Исполнителя</h5>
+                <span class="payment__autor">Название трека</span>
+            </div>
+        </div>
+        <form class="promo__form" action="POST">
+            <label class="promo__label" for="promo">
+                <input class="promo__input" type="text" id="promo"
+                    placeholder="Введите промокод">
+            </label>
+            <button class="btn promo__btn">Ввести</button>
+        </form>
+    </div>
+    <div class="payment__result">
+        <span class="payment__text">К оплате 1000 </span>
+        <a class="payment__link">
+            Подписать договор</a>
+        <button class="btn header__link link step__btn" data-step="7">
+            <span class="link__line link__line--top"></span>
+            <span class="link__line link__line--right"></span>
+            <span class="link__line link__line--bottom"></span>
+            <span class="link__line link__line--left"></span>
+            Оплатить</button>
+    </div>
+    <div class="additionally">
+        <div class="additionally__card">
+            <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
+                alt="">
+            <div class="additionally__card--body">
+                <span class="additionally__card--price">1000</span>
+                <span class="additionally__card--text">Придумаем отличное описание Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit. Ad, voluptatem.</span>
+            </div>
+            <button class="btn additionally__card--btn">Добавить</button>
+        </div>
+        <div class="additionally__card">
+            <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
+                alt="">
+            <div class="additionally__card--body">
+                <span class="additionally__card--price">2000</span>
+                <span class="additionally__card--text">Нарисуем красивую обложку</span>
+            </div>
+            <button class="btn additionally__card--btn">Добавить</button>
+        </div>
+    </div>
+</div>
