@@ -76,11 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $dot.style.left = `${Math.random() * 100}%`;
 
     if (initial) {    
-      $dot.style.bottom = `${Math.random() * 100}vh`;    
-      
+      $dot.style.bottom = `${Math.random() * 100}vh`
+        
       $dot.style.animationDelay = `${Math.random() * 10}s`;
       $dot.style.animationDuration = `${15 + Math.random() * 5}s`;
     } else {    
+        $dot.style.bottom = `0vh`
         $dot.style.animationDelay = `${Math.random() * 10}s`;
         $dot.style.animationDuration = `${45 + Math.random() * 5}s`;
     }
@@ -92,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 450; i++) {
     createdot(true);
   }
 
-  setInterval(createdot, 500);
+  setInterval(() => createdot(), 500);
 })

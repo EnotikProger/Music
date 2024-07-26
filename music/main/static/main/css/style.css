@@ -147,6 +147,8 @@ body {
 .header {
     padding: 20px 0 0;    
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .header__container {
@@ -503,12 +505,12 @@ body {
 
 .hero__title {    
     font-weight: bold;
-    font-size: 4.4rem;
-    line-height: 120%;
+    font-size: 4rem;
+    line-height: 110%;
 }
 
 .hero__descr {
-    font-size: 1.5rem;    
+    font-size: 1.4rem;    
 }
 
 .hero__descr--strong{
@@ -643,6 +645,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;    
+    z-index: 0;
     overflow: hidden;
 }
 
@@ -661,6 +664,9 @@ body {
     0% {
         transform: translateY(0%);
         opacity: 0;
+    }
+    25%, 75% {
+        opacity: 0.4;
     }
     50% {
         opacity: 0.6;        
@@ -683,3 +689,47 @@ body {
         transform: translateY(-2500px)
     }
 }
+
+/* Общие стили для всех браузеров */
+/* Ширина полосы прокрутки */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Цвет фона полосы прокрутки */
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-bg);
+  }
+  
+  /* Цвет самой полосы прокрутки */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue);
+    border-radius: 4px;
+  }
+  
+  /* закругление в Firefox*/
+  ::-moz-range-thumb {
+    border-radius: 4px;
+  }
+  /* Edge и Internet Explorer */
+  *::-ms-thumb {
+    border-radius: 4px; /* Закругленные углы для тумблера */
+  }
+  
+  /* Изменение цвета полосы прокрутки при наведении курсора */
+  /* ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  } */
+  
+  /* Firefox */
+  /* Ширина полосы прокрутки */
+  html {
+    scrollbar-width: 8px;
+  }
+  
+  /* Цвет полосы прокрутки */
+  body {
+    scrollbar-color: var(--color-bg);
+  }
+  
+  
