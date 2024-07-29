@@ -65,37 +65,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Запускаем воспроизведение первого видео
   playVideo(currentVideoIndex);
 
-  // Создание и анимация всплывающих точек
-  const $bublContainer = document.getElementById('bubl');
-
-  function createdot(initial = false) {
-    
-    const $dot = document.createElement('div');
-    $dot.classList.add('dot');
-    
-    $dot.style.left = `${Math.random() * 100}%`;
-
-    if (initial) {    
-      $dot.style.bottom = `${Math.random() * 100}vh`
-        
-      $dot.style.animationDelay = `${Math.random() * 10}s`;
-      $dot.style.animationDuration = `${15 + Math.random() * 5}s`;
-    } else {    
-        $dot.style.bottom = `0vh`
-        $dot.style.animationDelay = `${Math.random() * 10}s`;
-        $dot.style.animationDuration = `${45 + Math.random() * 5}s`;
-    }
-    
-    $bublContainer.appendChild($dot);
-
-    $dot.addEventListener('animationend', () => {
-        $dot.remove();
-    });
-  }
-
-  for (let i = 0; i < 450; i++) {
-    createdot(true);
-  }
-
-  setInterval(() => createdot(), 500);
 })
