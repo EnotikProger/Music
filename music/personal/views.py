@@ -6,3 +6,12 @@ def personal(request):
 
 
 
+
+
+
+
+
+
+
+
+
