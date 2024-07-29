@@ -257,7 +257,7 @@
     <div class="wrapper">
         <header class="header-personal">
             <div class="header-personal__container header__container container">
-                <a class="header__logo logo" href="../index.html">
+                <a class="header__logo logo" href="/">
                     <svg class="logo__icon">
                         <use xlink:href="#logo"></use>
                     </svg>
@@ -385,8 +385,8 @@
                     <div class="personal__hero section__content active-content" data-content="home">
                         <section class="personal-section news">
                             <h2 class="personal-section__title">новости</h2>
-                            <div class="new__top">
-                                <img class="news__img" src="../images/personal_page/albums/Kancler.webp"
+                            <div class="new__top">                            
+                                <img class="news__img" src="{% static 'main/img/personal_page/albums/Kancler.webp' %}"
                                     alt="Обложка новости">
                                 <h4 class="personal-section__subtitle">Заголовок новости специально сделан
                                     длинным, что бы показать окончание строки</h4>
@@ -415,49 +415,49 @@
                             <div class="top__list swiper">
                                 <div class="top__list-wrapper swiper-wrapper">
                                     <div class="swiper-slide top__card first">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Имя Исполнителя</span>
                                             <span class="top__rating">6589 баллов</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide top__card">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Другой автор</span>
                                             <span class="top__rating">5215 баллов</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide top__card">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Еще один</span>
                                             <span class="top__rating">3489 баллов</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide top__card">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Другой автор</span>
                                             <span class="top__rating">5215 баллов</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide top__card">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Еще один</span>
                                             <span class="top__rating">3489 баллов</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide top__card">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Другой автор</span>
                                             <span class="top__rating">5215 баллов</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide top__card">
-                                        <img class="top__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                        <img class="top__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                         <div class="top__content">
                                             <span class="top__name">Еще один</span>
                                             <span class="top__rating">3489 баллов</span>
@@ -470,7 +470,7 @@
                         <section class="personal-section playlists">
                             <h2 class="personal-section__title">Новые песни</h2>
                             <div class="playlists__item track">
-                                <img class="track__img" src="../images/personal_page/albums/Miller.jpg"
+                                <img class="track__img" src="{% static 'main/img/personal_page/albums/Miller.jpg' %}"
                                     alt="Обложка песни">
                                 <div class="track__content">
                                     <h5 class="track__name">название песни</h5>
@@ -503,7 +503,7 @@
                         <section class="personal-section playlists">
                             <h2 class="personal-section__title">Новые песни</h2>
                             <div class="playlists__item track">
-                                <img class="track__img" src="../images/personal_page/albums/Kancler.webp"
+                                <img class="track__img" src="{% static 'main/img/personal_page/albums/Kancler.webp' %}"
                                     alt="Обложка песни">
                                 <div class="track__content">
                                     <h5 class="track__name">Еще одна песня</h5>
@@ -545,7 +545,7 @@
                                         <span>Регистрация</span>
                                     </button>
                                     <a class="event-card__link" href="#">
-                                        <img src="../images/personal_page/albums/Kancler.webp" alt=""
+                                        <img src="{% static 'main/img/personal_page/albums/Kancler.webp' %}" alt=""
                                             class="event-card__img">
                                     </a>
                                     <div class="event-card__body">
@@ -582,7 +582,7 @@
                                 </div>
                                 <div class="event-card">
                                     <a class="event-card__link" href="#">
-                                        <img src="../images/personal_page/albums/Miller.jpg" alt=""
+                                        <img src="{% static 'main/img/personal_page/albums/Miller.jpg' %}" alt=""
                                             class="event-card__img">
                                     </a>
                                     <div class="event-card__body">
@@ -626,7 +626,7 @@
                                 <div class="swiper-wrapper">
                                     <div class="event-card swiper-slide">
                                         <a class="event-card__link" href="#">
-                                            <img src="../images/personal_page/albums/Kancler.webp" alt=""
+                                            <img src="{% static 'main/img/personal_page/albums/Kancler.webp' %}" alt=""
                                                 class="event-card__img">
                                         </a>
                                         <div class="event-card__body">
@@ -638,7 +638,7 @@
                                                 <p class="event-card__title winner__title"> Победитель </p>
                                                 <div class="winner__wrapper">
                                                     <img class="winner-card__img"
-                                                        src="../images/personal_page/Pendragon.jpg" alt="">
+                                                        src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                                     <div class="winner-card__content">
                                                         <span class="winner-card__autor">Другой автор</span>
                                                         <span class="winner-card__track">Песня</span>
@@ -674,7 +674,7 @@
                                     </div>
                                     <div class="event-card swiper-slide">
                                         <a class="event-card__link" href="#">
-                                            <img src="../images/personal_page/albums/Kancler.webp" alt=""
+                                            <img src="{% static 'main/img/personal_page/albums/Kancler.webp' %}" alt=""
                                                 class="event-card__img">
                                         </a>
                                         <div class="event-card__body">
@@ -686,7 +686,7 @@
                                                 <p class="event-card__title winner__title"> Победитель </p>
                                                 <div class="winner__wrapper">
                                                     <img class="winner-card__img"
-                                                        src="../images/personal_page/Pendragon.jpg" alt="">
+                                                        src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                                     <div class="winner-card__content">
                                                         <span class="winner-card__autor">Другой автор</span>
                                                         <span class="winner-card__track">Песня</span>
@@ -722,7 +722,7 @@
                                     </div>
                                     <div class="event-card swiper-slide">
                                         <a class="event-card__link" href="#">
-                                            <img src="../images/personal_page/albums/Kancler.webp" alt=""
+                                            <img src="{% static 'main/img/personal_page/albums/Kancler.webp' %}" alt=""
                                                 class="event-card__img">
                                         </a>
                                         <div class="event-card__body">
@@ -734,7 +734,7 @@
                                                 <p class="event-card__title winner__title"> Победитель </p>
                                                 <div class="winner__wrapper">
                                                     <img class="winner-card__img"
-                                                        src="../images/personal_page/Pendragon.jpg" alt="">
+                                                        src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                                     <div class="winner-card__content">
                                                         <span class="winner-card__autor">Другой автор</span>
                                                         <span class="winner-card__track">Песня</span>
@@ -770,7 +770,7 @@
                                     </div>
                                     <div class="event-card swiper-slide">
                                         <a class="event-card__link" href="#">
-                                            <img src="../images/personal_page/albums/Kancler.webp" alt=""
+                                            <img src="{% static 'main/img/personal_page/albums/Kancler.webp' %}" alt=""
                                                 class="event-card__img">
                                         </a>
                                         <div class="event-card__body">
@@ -782,7 +782,7 @@
                                                 <p class="event-card__title winner__title"> Победитель </p>
                                                 <div class="winner__wrapper">
                                                     <img class="winner-card__img"
-                                                        src="../images/personal_page/Pendragon.jpg" alt="">
+                                                        src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                                     <div class="winner-card__content">
                                                         <span class="winner-card__autor">Другой автор</span>
                                                         <span class="winner-card__track">Песня</span>
@@ -846,7 +846,7 @@
                             <div class="catalog__list">
                                 <div class="catalog__item">
                                     <div class="catalog__item--info">
-                                        <img class="catalog__item--img" src="../images/personal_page/albums/Miller.jpg"
+                                        <img class="catalog__item--img" src="{% static 'main/img/personal_page/albums/Miller.jpg' %}"
                                             alt="Обложка песни">
                                         <div class="catalog__item--content">
                                             <h5 class="catalog__item--name">Название песни</h5>
@@ -881,7 +881,7 @@
                                 </div>
                                 <div class="catalog__item">
                                     <div class="catalog__item--info">
-                                        <img class="catalog__item--img" src="../images/personal_page/albums/Miller.jpg"
+                                        <img class="catalog__item--img" src="{% static 'main/img/personal_page/albums/Miller.jpg' %}"
                                             alt="Обложка песни">
                                         <div class="catalog__item--content">
                                             <h5 class="catalog__item--name">Название песни</h5>
@@ -1128,7 +1128,7 @@
                                 </form>
                             </div>
                             <div class="added-singl">
-                                <img class="added-singl__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                <img class="added-singl__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                 <div class="added-singl__content">
                                     <h5 class="added-singl__name">Имя Исполнителя</h5>
                                     <span class="added-singl__autor">Название трека</span>
@@ -1273,7 +1273,7 @@
                         <div class="step-payment step__section section-hidden" data-step="6">
                             <div class="payment__top">
                                 <div class="payment__body">
-                                    <img class="payment__img" src="../images/personal_page/Pendragon.jpg" alt="">
+                                    <img class="payment__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                                     <div class="payment__content">
                                         <h5 class="payment__name">Имя Исполнителя</h5>
                                         <span class="payment__autor">Название трека</span>
@@ -1300,7 +1300,7 @@
                             </div>
                             <div class="additionally">
                                 <div class="additionally__card">
-                                    <img class="additionally__card--img" src="../images/personal_page/Eosella.jpg"
+                                    <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
                                         alt="">
                                     <div class="additionally__card--body">
                                         <span class="additionally__card--price">1000</span>
@@ -1310,7 +1310,7 @@
                                     <button class="btn additionally__card--btn">Добавить</button>
                                 </div>
                                 <div class="additionally__card">
-                                    <img class="additionally__card--img" src="../images/personal_page/Eosella.jpg"
+                                    <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
                                         alt="">
                                     <div class="additionally__card--body">
                                         <span class="additionally__card--price">2000</span>
