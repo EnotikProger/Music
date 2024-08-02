@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="step-three step__section section-hidden" data-step="3">
+    <h2 class="download__title">Нужны аудио</h2>
+    <div class="upload-singl">
+        <h6 class="form-step__title">Загрузите WAV файл(ы)</h6>
+        <form class="form-three" action="POST">
+            <div class="form-step__inner">
+                <input class="form-step__file" id="audio" type="file" accept="audio/wav">
+                <label class="form-step__label" for="audio">
+                    <span>+</span>
+                </label>
+            </div>
+            <button class="btn header__link link form-step__btn" type="submit">
+                <span class="link__line link__line--top"></span>
+                <span class="link__line link__line--right"></span>
+                <span class="link__line link__line--bottom"></span>
+                <span class="link__line link__line--left"></span>
+                Загрузить</button>
+        </form>
+    </div>
+    <div class="added-singl">
+        <img class="added-singl__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
+        <div class="added-singl__content">
+            <h5 class="added-singl__name">Имя Исполнителя</h5>
+            <span class="added-singl__autor">Название трека</span>
+        </div>
+        <button class="btn header__link link step__btn" type="button" data-step="4">
+            <span class="link__line link__line--top"></span>
+            <span class="link__line link__line--right"></span>
+            <span class="link__line link__line--bottom"></span>
+            <span class="link__line link__line--left"></span>
+            Продолжить</button>
+    </div>
+</div>

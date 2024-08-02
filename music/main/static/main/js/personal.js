@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Открытие модального окна
     const $btnOpenModal = document.getElementById('sign'),
         $modal = document.getElementById('modal'),
-        $btnCloseModal = document.getElementById('modalClose');
+        $btnCloseModal = document.getElementById('modalClose'),
+        $formLogin = document.getElementById('formLogin');
 
     $btnOpenModal.addEventListener('click', () => {
         $modal.classList.add('visible');
@@ -70,17 +71,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Закрытие модального окна по кнопке
     $btnCloseModal.addEventListener('click', () => {        
-        $modal.classList.remove('visible');
-        document.body.classList.remove('scroll-stop');
+        closeModal()
     });
 
     // Закрытие модального окна по эскейп
     window.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {            
-            $modal.classList.remove('visible');
-            document.body.classList.remove('scroll-stop');
+            closeModal()
         }
     });
+
+     // Закрытие модального окна по клику вне его
+     $modal.addEventListener('click', function (event) {       
+        if (!document.querySelector('.modal__body').contains(event.target)) {            
+            closeModal()
+        }
+    });
+
+    function closeModal() {
+        $modal.classList.remove('visible');
+        document.body.classList.remove('scroll-stop');
+    }
 
     // Переключение форм входа
     // Смена кнопки
@@ -192,7 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 if (item.dataset.step === currentStep) {
                     item.classList.remove('section-hidden');
-                    $steps[currentStep - 1].classList.add('active')
+                    if ($steps[currentStep - 1]) {
+                        $steps[currentStep - 1].classList.add('active')
+                    }                    
                 } else {
                     item.classList.add('section-hidden');
                 }

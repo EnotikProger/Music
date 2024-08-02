@@ -1,0 +1,35 @@
+{% load static %}
+
+<section class="personal-section playlists">
+    <h2 class="personal-section__title">Новые песни</h2>
+    <div class="playlists__item track">
+        <img class="track__img" src="{% static 'main/img/personal_page/albums/Miller.jpg' %}"
+            alt="Обложка песни">
+        <div class="track__content">
+            <h5 class="track__name">название песни</h5>
+            <span class="track__autor">Имя Исполнителя</span>
+            <span class="track__time">Дата релиза: 15.03.24</span>
+        </div>
+        <div class="track__actions">
+            <button class="btn track__btn ">
+                <svg class="track__icon track__icon--play">
+                    <use xlink:href="#play"></use>
+                </svg>
+                <span class="track__btn--text">Послушать</span>
+            </button>
+            <button class="btn track__btn track__like">
+                <svg class="track__icon track__icon--like">
+                    <use xlink:href="#like"></use>
+                </svg>
+                <span class="track__btn--text">Отметить</span>
+            </button>
+            <button class="btn track__btn">
+                <svg class="track__icon track__icon--donat">
+                    <use xlink:href="#donat"></use>
+                </svg>
+                <span class="track__btn--text">Поддержать</span>
+            </button>
+        </div>
+
+    </div>
+</section>
