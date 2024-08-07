@@ -1,30 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Бургер меню
-    const $burger = document.getElementById('burger'),
-    $nav = document.getElementById('nav'),
-    $menuItems = document.querySelectorAll('.menu__item');
+    const burger = document.getElementById('burger'),
+    nav = document.getElementById('nav'),
+    menuItems = document.querySelectorAll('.menu__item');
 
-    $burger.addEventListener('click', () => {
-        $burger.classList.toggle('open');
-        $nav.classList.toggle('open')
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        nav.classList.toggle('open')
     })
 
-    $menuItems.forEach(item => {
+    menuItems.forEach(item => {
         item.addEventListener('click', (event) => {
             const target = event.target;
 
             if (target.closest('.menu__item')) {
-                $burger.classList.remove('open');
-                $nav.classList.remove('open');
+                burger.classList.remove('open');
+                nav.classList.remove('open');
             }
         })
     })    
     
     // Закрытие по эск
-    window.addEventListener('keydown', () => {
-        $burger.classList.remove('open');
-        $nav.classList.remove('open');        
-    })
+  window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          burger.classList.remove('open');
+          nav.classList.remove('open');        
+      }
+  })
  
   // Видеоплеер
   const videoPlayer = document.getElementById('videoPlayer');
@@ -66,30 +68,30 @@ document.addEventListener("DOMContentLoaded", () => {
   playVideo(currentVideoIndex);
 
   // Создание и анимация всплывающих точек
-  const $bublContainer = document.getElementById('bubl');
+  const bublContainer = document.getElementById('bubl');
 
   function createdot(initial = false) {
     
-    const $dot = document.createElement('div');
-    $dot.classList.add('dot');
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
     
-    $dot.style.left = `${Math.random() * 100}%`;
+    dot.style.left = `${Math.random() * 100}%`;
 
     if (initial) {    
-      $dot.style.bottom = `${Math.random() * 100}vh`
+      dot.style.bottom = `${Math.random() * 100}vh`
         
-      $dot.style.animationDelay = `${Math.random() * 10}s`;
-      $dot.style.animationDuration = `${15 + Math.random() * 5}s`;
+      dot.style.animationDelay = `${Math.random() * 10}s`;
+      dot.style.animationDuration = `${15 + Math.random() * 5}s`;
     } else {    
-        $dot.style.bottom = `0vh`
-        $dot.style.animationDelay = `${Math.random() * 10}s`;
-        $dot.style.animationDuration = `${45 + Math.random() * 5}s`;
+        dot.style.bottom = `0vh`
+        dot.style.animationDelay = `${Math.random() * 10}s`;
+        dot.style.animationDuration = `${45 + Math.random() * 5}s`;
     }
     
-    $bublContainer.appendChild($dot);
+    bublContainer.appendChild(dot);
 
-    $dot.addEventListener('animationend', () => {
-        $dot.remove();
+    dot.addEventListener('animationend', () => {
+        dot.remove();
     });
   }
 

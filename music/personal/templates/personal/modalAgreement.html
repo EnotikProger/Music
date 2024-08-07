@@ -1,0 +1,117 @@
+{% load static %}
+
+<div class="modal" id="modalAgreement">
+    <div class="modal__body">
+        <button class="btn modal__close" data-modal="agreement">
+            <span class="modal__close--line"></span>
+            <span class="modal__close--line"></span>
+        </button>
+        <form class="modal__form form form-agreement" action="POST" id="formAgreement">
+            <p class="modal__form--title">Заполните реквизиты договора</p>
+            <div class="modal__form--box">
+                <label class="form__label" for="fio">
+                    Фамилия, имя, отчество подписанта договора
+                    <input class="form__input" type="text" name="fio" id="fio" required
+                        placeholder="Введите Ф.И.О">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <label class="form__label" for="dateUser">
+                    Дата рождения
+                    <input сlass="form__input" type="date" id="dateUser" name="dateUser"
+                        placeholder="Дата рождения" />
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <label class="form__label" for="mail">
+                    Адресс электронной почты
+                    <input class="form__input" type="mail" name="mail" id="mail" required
+                        placeholder="Введите почту">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <div class="modal__form--row">
+                    <label class="form__label" for="snils">
+                        СНИЛС
+                        <input class="form__input" type="text" name="snils" id="snils" required
+                            placeholder="Введите СНИЛС">
+                        <span class="form__error">Поле обязательно для заполнения</span>
+                    </label>
+                    <label class="form__label" for="inn">
+                        ИНН
+                        <input class="form__input" type="text" name="inn" id="inn" required
+                            placeholder="Введите ИНН">
+                        <span class="form__error">Поле обязательно для заполнения</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal__form--box">
+                <p class="modal__form--subtitle">Паспортные данные</p>
+                <div class="modal__form--row">
+                    <label class="form__label" for="number">
+                        <input class="form__input" type="text" name="number" id="number" required
+                            placeholder="Номер">
+                        <span class="form__error">Поле обязательно для заполнения</span>
+                    </label>
+                    <label class="form__label" for="series">
+                        <input class="form__input" type="text" name="series" id="series" required
+                            placeholder="Серия">
+                        <span class="form__error">Поле обязательно для заполнения</span>
+                    </label>
+                </div>
+                <label class="form__label" for="department">
+                    <input class="form__input" type="text" name="department" id="department" required
+                        placeholder="Кем выдан">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <div class="modal__form--row">
+                    <label class="form__label" for="datePasport">
+                        <input сlass="form__input" type="date" id="datePasport" name="datePasport"
+                            placeholder="Дата выдачи" />
+                        <span class="form__error">Поле обязательно для заполнения</span>
+                    </label>
+                    <label class="form__label" for="cod">
+                        <input class="form__input" type="text" name="cod" id="cod" required
+                            placeholder="Код подразделения">
+                        <span class="form__error">Поле обязательно для заполнения</span>
+                    </label>
+                </div>
+                <label class="form__label" for="address">
+                    <input class="form__input" type="text" name="address" id="address" required
+                        placeholder="Адрес регистрации">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+            </div>
+            <div class="modal__form--box">
+                <p class="modal__form--subtitle">Банковские реквизиты</p>
+                <label class="form__label" for="recipient">
+                    Фамилия, имя, отчество получателя
+                    <input class="form__input" type="text" name="recipient" id="recipient" required
+                        placeholder="Введите Ф.И.О">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <label class="form__label" for="nameBank">
+                    Нименование банка получателя
+                    <input class="form__input" type="text" name="nameBank" id="nameBank" required
+                        placeholder="Нименование банка">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <label class="form__label" for="checking">
+                    Расчетный счет
+                    <input class="form__input" type="text" name="checking" id="checking" required
+                        placeholder="Номер счета">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <label class="form__label" for="checkingCorr">
+                    Корреспондентский счет
+                    <input class="form__input" type="text" name="checkingCorr" id="checkingCorr" required
+                        placeholder="Номер счета">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+                <label class="form__label" for="bik">
+                    БИК банка
+                    <input class="form__input" type="text" name="bik" id="bik" required placeholder="БИК">
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                </label>
+            </div>
+            <button class="btn form__btn" type="submit" id="addAgreement">Продолжить</button>
+        </form>
+    </div>
+</div>
