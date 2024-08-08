@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnOpenModal = document.getElementById('sign'),
         modal = document.getElementById('modal'),
         btnCloseModal = document.querySelectorAll('.modal__close'),
-        btnAgreement = document.getElementById('agreement'),
+        btnAgreementAll = document.querySelectorAll('.agreement'),
         modalAgreement = document.getElementById('modalAgreement');
 
     btnOpenModal.addEventListener('click', () => {
@@ -117,10 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
      // Открытие модалки с реквизитами договора
-     btnAgreement.addEventListener('click', () => {
+     btnAgreementAll.forEach(btn => {
+        btn.addEventListener('click', () => {
         modalAgreement.classList.add('visible');
         document.body.classList.add('scroll-stop');
     })
+     })
+     
 
     // Переключение форм входа
     // Смена кнопки
@@ -207,8 +210,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnAddLink= document.getElementById('addLink')
 
     // настройка Выбора жанра
-    const ganre = document.getElementById('genre');
-    const choicesGenre = new Choices(ganre, {
+    const genre = document.getElementById('genre');
+    const choicesGenre = new Choices(genre, {
+        searchEnabled: false,
+        allowHTML: true
+    });
+
+    const genreAlbum = document.getElementById('genreAlbum');
+    const choicesGenreAlbum = new Choices(genreAlbum, {
         searchEnabled: false,
         allowHTML: true
     });
@@ -217,23 +226,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const stepSections = document.querySelectorAll('.step__section'),
         steps = document.querySelectorAll('.steps__item'),
         btnSteps = document.querySelectorAll('.step__btn'),
-        formTwo = document.querySelector('.form-two'),
-        formThree = document.querySelector('.form-three'),
-        formFour = document.querySelector('.form-four'),
-        formFive = document.querySelector('.form-five'),
-        formPromo = document.querySelector('.promo__form'),
-        addedSingl = document.querySelector('.added-singl');
+        formTwo = document.getElementById('formTwo'),
+        formTwoAlbum = document.getElementById('formTwoAlbum'),
+        formThree = document.getElementById('formThree'),
+        formThreeAlbum = document.getElementById('formThreeAlbum'),
+        formFour = document.getElementById('formFour'),
+        formFourAlbum = document.getElementById('formFourAlbum'),
+        formFive = document.getElementById('formFive'),
+        formFiveAlbum = document.getElementById('formFiveAlbum'),
+        formPromo = document.getElementById('formPromo'),
+        formPromoAlbum = document.getElementById('formPromoAlbum'),
+        addedSingl = document.querySelector('.added-singl'),
+        btnAdd = document.querySelectorAll('.download__btn'),
+        btnAddTrack = document.querySelectorAll('.add-track__btn');
         
+    let added = 'single';
+    btnAdd.forEach(btn => {
+        btn.addEventListener('click', () => {
+            added = btn.dataset.name;            
+        })
+    });
+
     btnSteps.forEach(btn => {
         btn.addEventListener('click', () => {
             const currentStep = btn.dataset.step;
              
             stepSections.forEach(item => {
-                
+                const box = document.querySelectorAll('.step__section--box')
+                                
                 if (item.dataset.step === currentStep) {
                     item.classList.remove('section-hidden');
                     if (steps[currentStep - 1]) {
                         steps[currentStep - 1].classList.add('active')
+                        box.forEach(i => {                            
+                            i.classList.remove('hidden')
+                            if (i.classList.contains(`step__section--${added}`)) {
+                                i.classList.remove('hidden');                                
+                            } else {
+                                i.classList.add('hidden');                                
+                            }
+                        })
                     }                    
                 } else {
                     item.classList.add('section-hidden');
@@ -242,7 +274,19 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
+    btnAddTrack.forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('.new-track').classList.remove('hidden')
+        })
+    })
+
+    if (formTwo)
     formTwo.addEventListener('submit', (event) => {
+        event.preventDefault();       
+    });
+
+    if (formTwoAlbum)
+    formTwoAlbum.addEventListener('submit', (event) => {
         event.preventDefault();       
     });
 
@@ -252,7 +296,16 @@ document.addEventListener("DOMContentLoaded", () => {
         addedSingl.style.display = 'flex';            
     })
 
+    formThreeAlbum.addEventListener('submit', (event) => {
+        event.preventDefault();           
+    })
+
+
     formFour.addEventListener('submit', (event) => {
+        event.preventDefault();       
+    });
+
+    formFourAlbum.addEventListener('submit', (event) => {
         event.preventDefault();       
     });
 
@@ -260,7 +313,15 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();       
     });
 
+    formFiveAlbum.addEventListener('submit', (event) => {
+        event.preventDefault();       
+    });
+
     formPromo.addEventListener('submit', (event) => {
+        event.preventDefault();       
+    });
+
+    formPromoAlbum.addEventListener('submit', (event) => {
         event.preventDefault();       
     });
 

@@ -1,25 +1,26 @@
 {% load static %}
 
 <div class="step-payment step__section section-hidden" data-step="6">
-    <div class="step__section--single step__section--box">
+    <div class="step__section--album hidden step__section--box">
         <div class="payment__top">
             <div class="payment__body">
                 <img class="payment__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
                 <div class="payment__content">
-                    <h5 class="payment__name">Имя Исполнителя</h5>
-                    <span class="payment__autor">Название трека</span>
+                    <h5 class="payment__name">Название альбома</h5>
+                    <h4 class="payment__name--autor">Имя Исполнителя</h4>
+                    <span class="payment__autor">В альбоме 2 трека</span>
                 </div>
             </div>
-            <form class="promo__form" action="POST" id="formPromo">
-                <label class="promo__label" for="promo">
-                    <input class="promo__input" type="text" id="promo"
+            <form class="promo__form" action="POST" id="formPromoAlbum">
+                <label class="promo__label" for="promo1">
+                    <input class="promo__input" type="text" id="promo1"
                         placeholder="Введите промокод">
                 </label>
                 <button class="btn promo__btn">Ввести</button>
             </form>
         </div>
         <div class="payment__result">
-            <span class="payment__text">К оплате 1000 </span>
+            <span class="payment__text">К оплате 2000 </span>
             <button class="payment__btn btn agreement">
                 Подписать договор</button>
             <button class="btn header__link link step__btn" data-step="7">
@@ -51,5 +52,4 @@
             </div>
         </div>
     </div>
-        {% include 'personal/stepPaymentAlbum.html' %}
 </div>

@@ -1,23 +1,23 @@
 {% load static %}
 
  <div class="step-five step__section section-hidden" data-step="5">
-    <div class="step__section--single step__section--box">
+    <div class="step__section--album hidden step__section--box">
         <h2 class="download__title">Ссылки на площадки</h2>
-        <form class="form-five" action="POST" id="formFive">
-            <label class="form-step__label" for="link-1">
+        <form class="form-five" action="POST" id="formFiveAlbum">
+            <label class="form-step__label" for="link1-1">
                 <p>Ссылка на карточку исполнителя в</p>
-                <input class="form-step__input" type="text" id="link-1">
+                <input class="form-step__input" type="text" id="link1-1">
             </label>
-            <label class="form-step__label" for="link-2">
+            <label class="form-step__label" for="link1-2">
                 <p>Ссылка на карточку исполнителя в</p>
-                <input class="form-step__input" type="text" id="link-2">
+                <input class="form-step__input" type="text" id="link1-2">
             </label>
-            <label class="form-step__label" for="link-3">
+            <label class="form-step__label" for="link1-3">
                 <p>Ссылка на карточку исполнителя в</p>
-                <input class="form-step__input" type="text" id="link-3">
+                <input class="form-step__input" type="text" id="link1-3">
             </label>
-            <label class="form-step__checkbox checkbox" for="check">
-                <input class="checkbox__input" id="check" type="checkbox" checked>
+            <label class="form-step__checkbox checkbox" for="check1">
+                <input class="checkbox__input" id="check1" type="checkbox" checked>
                 <span class="checkbox__check"></span>
                 <span class="checkbox__box"></span>
                 <span class="checkbox__text">Принимаю
@@ -31,5 +31,4 @@
                 Далее</button>
         </form>
     </div>
-    {% include 'personal/stepFiveAlbum.html' %}
 </div>

@@ -1,11 +1,10 @@
 {% load static %}
 
-<div class="step-two step__section section-hidden" data-step="2">
-    <div class="step__section--single step__section--box">
-        <h2 class="download__title">Информация о релизе</h2>
-        <form class="form-two form-step" action="POST" id="formTwo">
+<div class="step__section--album step__section--box hidden "> 
+    <h2 class="download__title">Информация о альбоме</h2>
+        <form class="form-two form-step" action="POST" id="formTwoAlbum">
             <h6 class="form-step__title">Выберите жанр</h6>
-            <select class="form-step__select" name="genre" id="genre">
+            <select class="form-step__select" name="genreAlbum" id="genreAlbum">
                 {% comment %} <option default>Выберите жанр</option> {% endcomment %}
                 <option value="pop">Поп-музыка</option>
                 <option value="rok">Рок-музыка</option>
@@ -29,15 +28,15 @@
                 </div>
             </div>
             <div class="form-step__inner">
-                <input class="form-step__file" type="file" accept="image/*" id="img">
-                <label class="form-step__label" for="img">
+                <input class="form-step__file" type="file" accept="image/*" id="imgAlbum">
+                <label class="form-step__label" for="imgAlbum">
                     <span>+</span>
                 </label>
             </div>
             <div class="form-step__wrapper">
-                <label class="form-step__label" for="name">
+                <label class="form-step__label" for="nameAutor">
                     <p>Исполнитель</p>
-                    <input class="form-step__input" type="text" id="name" placeholder="Имя исполнителя">
+                    <input class="form-step__input" type="text" id="nameAutor" placeholder="Исполнитель">
                     <div class="tultip">
                         <button class="tultip__btn" type="button">
                             <svg class="tultip__icon">
@@ -53,9 +52,9 @@
                     </div>
                 </label>
 
-                <label class="form-step__label" for="title">
-                    <p>Название релиза</p>
-                    <input class="form-step__input" type="text" id="title"
+                <label class="form-step__label" for="titleAlbum">
+                    <p>Название альбома</p>
+                    <input class="form-step__input" type="text" id="titleAlbum"
                         placeholder="Название релиза">
                     <div class="tultip">
                         <button class="tultip__btn" type="button">
@@ -72,9 +71,9 @@
                     </div>
                 </label>
 
-                <label class="form-step__label" for="date">
+                <label class="form-step__label" for="dateAlbum">
                     <p>Дата основного релиза</p>
-                    <input class="form-step__input" type="date" id="date" placeholder="Дата">
+                    <input class="form-step__input" type="date" id="dateAlbum" placeholder="Дата">
                     <div class="tultip">
                         <button class="tultip__btn" type="button">
                             <svg class="tultip__icon">
@@ -89,9 +88,9 @@
                         </p>
                     </div>
                 </label>
-                <label class="form-step__label" for="data-tik">
+                <label class="form-step__label" for="album-tik">
                     <p>Дата выхода в Tik Tok</p>
-                    <input class="form-step__input" type="date" id="data-tik">
+                    <input class="form-step__input" type="date" id="album-tik">
                     <div class="tultip">
                         <button class="tultip__btn" type="button">
                             <svg class="tultip__icon">
@@ -107,7 +106,51 @@
                     </div>
                 </label>
             </div>
-            <button class="btn header__link link step__btn" data-step="3">
+            <div class="form-step__wrapper">
+                <label class="form-step__label" for="titleSingle">
+                    <p>Название трека</p>
+                    <input class="form-step__input" type="text" id="titleSingle"
+                        placeholder="Название трека">
+                    <div class="tultip">
+                        <button class="tultip__btn" type="button">
+                            <svg class="tultip__icon">
+                                <use xlink:href="#tultip"></use>
+                            </svg>
+                        </button>
+                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                            adipisicing
+                            elit.
+                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                            pariatur
+                        </p>
+                    </div>
+                </label>
+                <button class="add-track__btn btn" type="button">
+            Еще трек</button>
+            </div>
+            <div class="form-step__wrapper new-track hidden">
+                <label class="form-step__label" for="titleSingle2">
+                    <p>Название трека</p>
+                    <input class="form-step__input" type="text" id="titleSingle2"
+                        placeholder="Название трека">
+                    <div class="tultip">
+                        <button class="tultip__btn" type="button">
+                            <svg class="tultip__icon">
+                                <use xlink:href="#tultip"></use>
+                            </svg>
+                        </button>
+                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                            adipisicing
+                            elit.
+                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                            pariatur
+                        </p>
+                    </div>
+                </label>
+                <button class="add-track__btn btn" type="button">
+            Еще трек</button>
+            </div>
+            <button class="btn header__link link step__btn" type="submit" data-step="3">
                 <span class="link__line link__line--top"></span>
                 <span class="link__line link__line--right"></span>
                 <span class="link__line link__line--bottom"></span>
@@ -115,6 +158,3 @@
                 Далее</button>
         </form>
     </div>
-    
-    {% include 'personal/stepTwoAlbum.html' %}    
-</div>

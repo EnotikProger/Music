@@ -1,0 +1,37 @@
+{% load static %}
+
+<div class="step-three step__section section-hidden" data-step="3">
+    <div class="step__section--album hidden step__section--box">
+        <h2 class="download__title">Нужны аудио</h2>       
+        <div class="upload-singl">
+            <h6 class="form-step__title">Загрузите WAV файл(ы)</h6>            
+            <form class="form-three" action="POST" id="formThreeAlbum">
+                <div class="form-step__inner--box">
+                    <div class="form-step__inner">                    
+                        <input class="form-step__file" id="audio1" type="file" accept="audio/wav">
+                        <label class="form-step__label" for="audio1">
+                            <span>+</span>
+                        </label>
+                    </div>
+                    <span class="added-singl__autor">Название трека</span>
+                </div>
+                <div class="form-step__inner--box">
+                    <div class="form-step__inner">                    
+                        <input class="form-step__file" id="audio2" type="file" accept="audio/wav">
+                        <label class="form-step__label" for="audio2">
+                            <span>+</span>
+                        </label>
+                    </div>
+                    <span class="added-singl__autor">Название трека</span>
+                </div>
+                <button class="btn header__link link form-step__btn step__btn" type="submit" data-step="4">
+                    <span class="link__line link__line--top"></span>
+                    <span class="link__line link__line--right"></span>
+                    <span class="link__line link__line--bottom"></span>
+                    <span class="link__line link__line--left"></span>
+                    Загрузить</button>
+            </form>
+        </div>   
+            
+    </div>
+</div>
