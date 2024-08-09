@@ -1546,6 +1546,11 @@
     border-color: var(--color-second);
 }
 
+.form-step__inner img {
+    width: 90%;
+    height: 90%;
+}
+
 .form-step__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1653,6 +1658,7 @@ input[type='date']::after {
     flex-shrink: 1;    
     border-radius: 20px;
     border: 1px solid rgba(83, 95, 246, 0.4);
+    width: 100%;
 }
 
 .added-singl__img {
@@ -1670,13 +1676,29 @@ input[type='date']::after {
     font-size: 24px;
 }
 
-.upload-singl {
-    padding: 20px; 
+.upload-singl-text {
+    font-size: 24px;
+}
+
+.upload-singl-text.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.upload-singl {   
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     border-radius: 20px;
     border: 1px solid rgba(83, 95, 246, 0.4);
+    width: 100%;
+}
+
+.upload-singl-box {
+    display: flex;
+    gap: 40px;
+    width: 100%;
 }
 
 .form-four > .form-step__wrapper > .form-step__label > .tultip {

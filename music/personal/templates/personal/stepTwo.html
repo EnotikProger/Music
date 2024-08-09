@@ -5,8 +5,7 @@
         <h2 class="download__title">Информация о релизе</h2>
         <form class="form-two form-step" action="POST" id="formTwo">
             <h6 class="form-step__title">Выберите жанр</h6>
-            <select class="form-step__select" name="genre" id="genre">
-                {% comment %} <option default>Выберите жанр</option> {% endcomment %}
+            <select class="form-step__select" name="genre" id="genre">                
                 <option value="pop">Поп-музыка</option>
                 <option value="rok">Рок-музыка</option>
                 <option value="jazz">Джаз</option>
@@ -54,7 +53,7 @@
                 </label>
 
                 <label class="form-step__label" for="title">
-                    <p>Название релиза</p>
+                    <p>Название трека</p>
                     <input class="form-step__input" type="text" id="title"
                         placeholder="Название релиза">
                     <div class="tultip">

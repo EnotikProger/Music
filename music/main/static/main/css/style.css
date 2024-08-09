@@ -303,6 +303,21 @@ body {
             transition-delay: 0.5s;
 }
 
+.link:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+.link:disabled:hover {
+    box-shadow: none; 
+    background-color: transparent; 
+}
+
+.link:disabled:hover .link__line {
+    background: transparent;
+}
+
 .link__line {
     position: absolute;
     z-index: 10;
