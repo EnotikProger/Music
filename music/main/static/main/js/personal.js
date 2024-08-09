@@ -456,6 +456,28 @@ document.addEventListener("DOMContentLoaded", () => {
         
     });
 
+    //Формы входа/регистрации
+    const formLogin = document.getElementById('login'),
+        formSignup = document.getElementById('signup');
+
+    const newUser = {};
+    
+    formLogin.addEventListener('submit', (e) => {
+        e.preventDefault();
+        newUser.mail = document.getElementById('newEmail').value;
+
+        // Тут запрос на сервер про создание нового пользователя
+        console.log('Новый пользователь', newUser);
+    });
+    
+    formSignup.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = document.getElementById('email').value;
+
+        // Тут запрос на сервер проверки пользователя и выдача ему доступа
+        console.log('Пользователь', user);
+    });
+
     // Фильтрация каталога
     const filter = document.getElementById('filter');
     const choicesFilter = new Choices(filter, {
