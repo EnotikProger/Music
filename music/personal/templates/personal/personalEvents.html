@@ -1,0 +1,14 @@
+{% extends 'personal/personalTest.html' %}
+{% load static %}
+
+{% block section %}
+    <div class="personal__event section__content" data-content="event">
+        {% include 'personal/newEvent.html' %}
+
+        {% include 'personal/oldEvent.html' %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'main/js/events.js' %}"></script>
+{% endblock %}

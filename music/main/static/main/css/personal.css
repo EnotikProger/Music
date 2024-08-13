@@ -246,7 +246,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
     background: rgb(242,144,105);
@@ -275,7 +275,7 @@
     cursor: not-allowed;
 }
 
-.aside-menu__btn {
+.aside-menu__link {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -285,7 +285,7 @@
     text-transform: uppercase;    
 }
 
-.aside-menu__btn:disabled {
+.aside-menu__link.disabled {
     filter: brightness(50%);
     cursor: not-allowed;
 }
@@ -308,7 +308,7 @@
 
 .personal__hero, .personal__event, .download, .personal__catalog {
     padding: 0 20px 0;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 50px;
     flex: 1;
@@ -341,10 +341,6 @@
 
 .personal-section__subtitle::first-letter {
     text-transform: uppercase;
-}
-
-.active-content {
-    display: flex;
 }
 
 /*News*/

@@ -1,0 +1,12 @@
+{% extends 'personal/personalTest.html' %}
+{% load static %}
+
+{% block section %}
+    <div class="personal__catalog section__content" data-content="catalog">
+        {% include 'personal/catalog.html' %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'main/js/catalog.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'personal/personalTest.html' %}
+{% load static %}
+
+{% block section %}
+    <div class="download section__content" data-content="distribSection">
+        {% include 'personal/stepsList.html' %}
+        {% include 'personal/stepOne.html' %}
+        {% include 'personal/stepTwo.html' %}
+        {% include 'personal/stepThree.html' %}
+        {% include 'personal/stepFour.html' %}
+        {% include 'personal/stepFive.html' %}
+        {% include 'personal/stepPayment.html' %}        
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'main/js/downloads.js' %}"></script>
+{% endblock %}
+
