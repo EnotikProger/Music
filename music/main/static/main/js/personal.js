@@ -450,7 +450,8 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(newTrack),
           })
 
-          return await response.json();
+          console.log('Ответ сервера', res.data);
+        //   return await response.json();
         } catch(error) {
             throw new Error(error)
         }
