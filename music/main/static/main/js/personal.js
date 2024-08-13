@@ -437,22 +437,23 @@ document.addEventListener("DOMContentLoaded", () => {
         btnRezalt.removeAttribute('disabled');
     });
 
+    const BASE_URL = 'http//127.00/8080/'
     btnRezalt.addEventListener('click', async() => {
         console.log('Окончательный объект добавленной песни', newTrack);
         // Дальше отправка нового трека на серсер
-        // try {
-        //     const res = await fetch('http//127.00/8080/', {
-        //     method: "POST",
-        //     headers: {
-        //       "Content-Type": "application/json",              
-        //     },
-        //     body: JSON.stringify(newTrack),
-        //   })
+        try {
+            const res = await fetch(`${BASE_URL}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",              
+            },
+            body: JSON.stringify(newTrack),
+          })
 
-        //   return await response.json();
-        // } catch(error) {
-        //     throw new Error(error)
-        // }
+          return await response.json();
+        } catch(error) {
+            throw new Error(error)
+        }
         
     });
 
