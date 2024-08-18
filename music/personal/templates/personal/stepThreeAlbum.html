@@ -2,36 +2,114 @@
 
 <div class="step-three step__section section-hidden" data-step="3">
     <div class="step__section--album hidden step__section--box">
-        <h2 class="download__title">Нужны аудио</h2>       
-        <div class="upload-singl">
-            <h6 class="form-step__title">Загрузите WAV файл(ы)</h6>            
-            <form class="form-three" action="POST" id="formThreeAlbum">
-                <div class="form-step__inner--box">
-                    <div class="form-step__inner">                    
-                        <input class="form-step__file" id="audio1" type="file" accept="audio/wav">
-                        <label class="form-step__label" for="audio1">
-                            <span>+</span>
+        <h2 class="download__title">Заполните для каждого трека</h2>       
+        <form class="form-three" action="POST" id="formThreeAlbum">
+            <div class="upload-singl tracks">               
+                <div class="form-step__track" >
+                    <div class="form-step__track-top"> 
+                        <div class="form-step__content">  
+                            <div class="form-step__inner inner">                  
+                                <input class="form-step__file file-audio-track" id="audio0" type="file" accept="audio/wav">
+                                <label class="form-step__label" for="audio0">
+                                    <span>+</span>
+                                </label>
+                             </div>
+                            <span class="upload-singl-text">Загрузите WAV файл</span>                        
+                        </div>   
+                        <div class="form-step__content">   
+                            <div class="form-step__inner img-track">                 
+                                <input class="form-step__file file-img-track" type="file" accept="image/*" id="imgtrack0">
+                                <label class="form-step__label" for="imgtrack0">
+                                    <span>+</span>
+                                </label>
+                             </div>
+                            <span class="upload-singl-text">Загрузите Обложку трека</span>                        
+                        </div>    
+                    </div>            
+                    <div class="form-step__wrapper"> 
+                        <label class="form-step__label" for="track-name0">
+                            <p>Название трека</p>
+                            <input class="form-step__input track-name" type="text" id="track-name0" placeholder="Название">
+                            <div class="tultip">
+                                <button class="tultip__btn" type="button">
+                                    <svg class="tultip__icon">
+                                        <use xlink:href="#tultip"></use>
+                                    </svg>
+                                </button>
+                                <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing
+                                    elit.
+                                    Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                                    pariatur
+                                </p>
+                            </div>
+                        </label>
+                        <label class="form-step__label" for="track-autorSinger0">
+                            <p>Исполнитель</p>
+                            <input class="form-step__input" type="text" id="track-autorSinger0" placeholder="Исполнитель">
+                            <div class="tultip">
+                                <button class="tultip__btn" type="button">
+                                    <svg class="tultip__icon">
+                                        <use xlink:href="#tultip"></use>
+                                    </svg>
+                                </button>
+                                <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing
+                                    elit.
+                                    Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                                    pariatur
+                                </p>
+                            </div>
+                        </label>
+
+                        <label class="form-step__label" for="track-autorMusik0">
+                            <p>Автор музыки *</p>
+                            <input class="form-step__input" type="text" id="track-autorMusik0" placeholder="ФИО">
+                            <div class="tultip">
+                                <button class="tultip__btn" type="button">
+                                    <svg class="tultip__icon">
+                                        <use xlink:href="#tultip"></use>
+                                    </svg>
+                                </button>
+                                <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing
+                                    elit.
+                                    Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                                    pariatur
+                                </p>
+                            </div>
+                        </label>
+
+                        <label class="form-step__label" for="track-autorText0">
+                            <p>Автор слов *</p>
+                            <input class="form-step__input" type="text" id="track-autorText0" placeholder="ФИО">
+                            <div class="tultip">
+                                <button class="tultip__btn" type="button">
+                                    <svg class="tultip__icon">
+                                        <use xlink:href="#tultip"></use>
+                                    </svg>
+                                </button>
+                                <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing
+                                    elit.
+                                    Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                                    pariatur
+                                </p>
+                            </div>
                         </label>
                     </div>
-                    <span class="added-singl__autor">Название трека</span>
-                </div>
-                <div class="form-step__inner--box">
-                    <div class="form-step__inner">                    
-                        <input class="form-step__file" id="audio2" type="file" accept="audio/wav">
-                        <label class="form-step__label" for="audio2">
-                            <span>+</span>
-                        </label>
-                    </div>
-                    <span class="added-singl__autor">Название трека</span>
-                </div>
-                <button class="btn header__link link form-step__btn step__btn" type="submit" data-step="4">
-                    <span class="link__line link__line--top"></span>
-                    <span class="link__line link__line--right"></span>
-                    <span class="link__line link__line--bottom"></span>
-                    <span class="link__line link__line--left"></span>
-                    Загрузить</button>
-            </form>
-        </div>   
+                    <button class="add-track__btn btn" type="button">
+                Еще трек</button>
+                </div>                
+            </div> 
+            <button class="btn header__link link form-step__btn step__btn" type="submit" data-step="4">
+                <span class="link__line link__line--top"></span>
+                <span class="link__line link__line--right"></span>
+                <span class="link__line link__line--bottom"></span>
+                <span class="link__line link__line--left"></span>
+                Загрузить</button>
+               
+        </form>
             
     </div>
 </div>

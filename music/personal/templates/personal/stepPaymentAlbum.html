@@ -1,19 +1,19 @@
 {% load static %}
 
-<div class="step-payment step__section section-hidden" data-step="6">
-    <div class="step__section--album hidden step__section--box">
+<div class="step-payment step__section section-hidden step-payment-album" data-step="6">
+    <div class="step__section--album step__section--box">
         <div class="payment__top">
             <div class="payment__body">
-                <img class="payment__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
+                <img class="payment__img payment__img-album" alt="">
                 <div class="payment__content">
-                    <h5 class="payment__name">Название альбома</h5>
-                    <h4 class="payment__name--autor">Имя Исполнителя</h4>
-                    <span class="payment__autor">В альбоме 2 трека</span>
+                    <h5 class="payment__name payment__name-album"></h5>
+                    <h4 class="payment__name--autor payment__name--autor-album"></h4>
+                    <span class="payment__autor payment__autor-album"></span>
                 </div>
             </div>
             <form class="promo__form" action="POST" id="formPromoAlbum">
-                <label class="promo__label" for="promo1">
-                    <input class="promo__input" type="text" id="promo1"
+                <label class="promo__label" for="promo">
+                    <input class="promo__input" type="text" id="promoAlbum"
                         placeholder="Введите промокод">
                 </label>
                 <button class="btn promo__btn">Ввести</button>
@@ -21,15 +21,17 @@
         </div>
         <div class="payment__result">
             <span class="payment__text">К оплате 2000 </span>
-            <button class="payment__btn btn agreement">
+            <button class="payment__btn btn agreement" id="alb">
                 Подписать договор</button>
-            <button class="btn header__link link step__btn" data-step="7">
+            <button class="btn header__link link" id="rezalt-album" disabled>
                 <span class="link__line link__line--top"></span>
                 <span class="link__line link__line--right"></span>
                 <span class="link__line link__line--bottom"></span>
                 <span class="link__line link__line--left"></span>
                 Оплатить</button>
         </div>
+        <p class="rezalt-message" id="album-message">
+        </p>
         <div class="additionally">
             <div class="additionally__card">
                 <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"

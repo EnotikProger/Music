@@ -1,13 +1,13 @@
 {% load static %}
 
-<div class="step-payment step__section section-hidden" data-step="6">
+<div class="step-payment step__section section-hidden step-payment-track" data-step="6">
     <div class="step__section--single step__section--box">
         <div class="payment__top">
             <div class="payment__body">
-                <img class="payment__img" src="{% static 'main/img/personal_page/Pendragon.jpg' %}" alt="">
+                <img class="payment__img" alt="">
                 <div class="payment__content">
-                    <h5 class="payment__name">Имя Исполнителя</h5>
-                    <span class="payment__autor">Название трека</span>
+                    <h5 class="payment__name"></h5>
+                    <span class="payment__autor"></span>
                 </div>
             </div>
             <form class="promo__form" action="POST" id="formPromo">
@@ -20,15 +20,16 @@
         </div>
         <div class="payment__result">
             <span class="payment__text">К оплате 1000 </span>
-            <button class="payment__btn btn agreement">
+            <button class="payment__btn btn agreement" id="trak">
                 Подписать договор</button>
-            <a class="btn header__link link step__btn" data-step="7"  id="rezalt" disabled>
+            <button class="btn header__link link" id="rezalt" disabled>
                 <span class="link__line link__line--top"></span>
                 <span class="link__line link__line--right"></span>
                 <span class="link__line link__line--bottom"></span>
                 <span class="link__line link__line--left"></span>
-                Оплатить</a>
+                Оплатить</button>
         </div>
+        <p class="rezalt-message" id="track-message">
         <div class="additionally">
             <div class="additionally__card">
                 <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
@@ -51,5 +52,6 @@
             </div>
         </div>
     </div>
-        {% include 'personal/stepPaymentAlbum.html' %}
+
+    {% include 'personal/stepPaymentAlbum.html' %}
 </div>

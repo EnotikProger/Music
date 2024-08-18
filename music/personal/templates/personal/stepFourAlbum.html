@@ -4,44 +4,10 @@
     <div class="step__section--album hidden step__section--box">
         <h2 class="download__title">Важная информация</h2>
         <form class="form-four" action="POST" id="formFourAlbum">
-            <div class="form-step__wrapper">
-                <label class="form-step__label" for="autor1-musik">
-                    <p>Автор музыки *</p>
-                    <input class="form-step__input" type="text" id="autor1-musik" placeholder="ФИО">
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-                <label class="form-step__label" for="autor1-text">
-                    <p>Автор слов *</p>
-                    <input class="form-step__input" type="text" id="autor1-text" placeholder="ФИО">
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-                <label class="form-step__label" for="isrc1">
+            <div class="form-step__wrapper">              
+                <label class="form-step__label" for="isrc-album">
                     <p>ISRC</p>
-                    <input class="form-step__input" type="text" id="isrc1">
+                    <input class="form-step__input" type="text" id="isrc-album">
                     <div class="tultip">
                         <button class="tultip__btn" type="button">
                             <svg class="tultip__icon">
@@ -56,9 +22,9 @@
                         </p>
                     </div>
                 </label>
-                <label class="form-step__label" for="upc1">
+                <label class="form-step__label" for="upc-album">
                     <p>UPC</p>
-                    <input class="form-step__input" type="text" id="upc1">
+                    <input class="form-step__input" type="text" id="upc-album">
                     <div class="tultip">
                         <button class="tultip__btn" type="button">
                             <svg class="tultip__icon">
@@ -73,7 +39,7 @@
                         </p>
                     </div>
                 </label>
-                <label class="form-step__label form-step__label--area" for="text1">
+                {% comment %} <label class="form-step__label form-step__label--area" for="text1">
                     <p>Текст песни</p>
                     <textarea class="form-step__textarea" id="text1" rows="15"></textarea>
 
@@ -90,96 +56,8 @@
                             pariatur
                         </p>
                     </div>
-                </label>
-            </div>
-            <div class="form-step__wrapper">
-                <label class="form-step__label" for="autor-musik2">
-                    <p>Автор музыки *</p>
-                    <input class="form-step__input" type="text" id="autor-musik2" placeholder="ФИО">
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-                <label class="form-step__label" for="autor2-text">
-                    <p>Автор слов *</p>
-                    <input class="form-step__input" type="text" id="autor2-text" placeholder="ФИО">
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-                <label class="form-step__label" for="isrc2">
-                    <p>ISRC</p>
-                    <input class="form-step__input" type="text" id="isrc2">
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-                <label class="form-step__label" for="upc2">
-                    <p>UPC</p>
-                    <input class="form-step__input" type="text" id="upc2">
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-                <label class="form-step__label form-step__label--area" for="text2">
-                    <p>Текст песни</p>
-                    <textarea class="form-step__textarea" id="text2" rows="15"></textarea>
-
-                    <div class="tultip">
-                        <button class="tultip__btn" type="button">
-                            <svg class="tultip__icon">
-                                <use xlink:href="#tultip"></use>
-                            </svg>
-                        </button>
-                        <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing
-                            elit.
-                            Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
-                            pariatur
-                        </p>
-                    </div>
-                </label>
-            </div>
+                </label> {% endcomment %}
+            </div>           
             <button class="btn header__link link step__btn" data-step="5" type="submit">
                 <span class="link__line link__line--top"></span>
                 <span class="link__line link__line--right"></span>

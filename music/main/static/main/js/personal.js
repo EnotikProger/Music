@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
      // Открытие модалки с реквизитами договора
      btnAgreementAll.forEach(btn => {
         btn.addEventListener('click', () => {
+            modalAgreement.dataset.name = btn.id
             modalAgreement.classList.add('visible');
             document.body.classList.add('scroll-stop');
         })
