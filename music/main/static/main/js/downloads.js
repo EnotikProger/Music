@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let newTrack = {};
-    let newAlbum = {};
+    let newTrack = {}; // Объект для нового трека
+    let newAlbum = {}; // Объект для нового альбома
+    const csrfToken = '{{ csrf_token }}';  // Получаем CSRF токен
 
     // настройка Выбора жанра
     const genre = document.getElementById('genre');
@@ -182,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('Промокод', newTrack.promCode);
     });
 
-    const BASE_URL = 'http//127.00/8080/'
+    const BASE_URL = '/items/'
     btnRezalt.addEventListener('click', async() => {
 
         console.log('Окончательный объект добавленной песни', newTrack);
@@ -191,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const res = await fetch(`${BASE_URL}`, {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",              
+                'X-CSRFToken': csrfToken,
             },
             body: JSON.stringify(newTrack),
           })
@@ -555,13 +556,17 @@ document.addEventListener("DOMContentLoaded", () => {
     btnRezaltAlbum.addEventListener('click', async() => {
 
         console.log('Окончательный объект добавленной альбома', newAlbum);
-        // Дальше отправка нового трека на серсер
+        // Дальше отправка нового трека на сервер
+        // headers: {
+            //   "Content-Type": "application/json",              
+            // },
         try {
             const res = await fetch(`${BASE_URL}`, {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",              
+                'X-CSRFToken': csrfToken,
             },
+            
             body: JSON.stringify(newAlbum),
           })
 
