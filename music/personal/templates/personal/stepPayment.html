@@ -4,46 +4,61 @@
     <div class="step__section--single step__section--box">
         <div class="payment__top">
             <div class="payment__body">
-                <img class="payment__img" alt="">
+                <img class="payment__img" alt="" />
                 <div class="payment__content">
                     <h5 class="payment__name"></h5>
                     <span class="payment__autor"></span>
                 </div>
             </div>
-            <form class="promo__form" action="POST" id="formPromo">
+            <form class="promo__form" id="formPromo">
                 <label class="promo__label" for="promo">
-                    <input class="promo__input" type="text" id="promo"
-                        placeholder="Введите промокод">
+                    <input
+                        class="promo__input"
+                        type="text"
+                        id="promo"
+                        placeholder="Введите промокод"
+                    />
                 </label>
                 <button class="btn promo__btn">Ввести</button>
             </form>
         </div>
-        <div class="payment__result">
+        <form class="payment__result" id="rezaltTrack">
+            {% csrf_token %}
             <span class="payment__text">К оплате 1000 </span>
-            <button class="payment__btn btn agreement" id="trak">
-                Подписать договор</button>
-            <button class="btn header__link link" id="rezalt" disabled>
+            <button class="payment__btn btn agreement" type="button" id="track">
+                Подписать договор
+            </button>
+            <button class="btn header__link link" id="rezalt" type="submit" disabled>
                 <span class="link__line link__line--top"></span>
                 <span class="link__line link__line--right"></span>
                 <span class="link__line link__line--bottom"></span>
                 <span class="link__line link__line--left"></span>
-                Оплатить</button>
-        </div>
-        <p class="rezalt-message" id="track-message">
+                Оплатить
+            </button>
+        </form>
+        <p class="rezalt-message" id="track-message"></p>
         <div class="additionally">
             <div class="additionally__card">
-                <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
-                    alt="">
+                <img
+                    class="additionally__card--img"
+                    src="{% static 'main/img/personal_page/Eosella.jpg' %}"
+                    alt=""
+                />
                 <div class="additionally__card--body">
                     <span class="additionally__card--price">1000</span>
-                    <span class="additionally__card--text">Придумаем отличное описание Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit. Ad, voluptatem.</span>
+                    <span class="additionally__card--text"
+                        >Придумаем отличное описание Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Ad, voluptatem.</span
+                    >
                 </div>
                 <button class="btn additionally__card--btn">Добавить</button>
             </div>
             <div class="additionally__card">
-                <img class="additionally__card--img" src="{% static 'main/img/personal_page/Eosella.jpg' %}"
-                    alt="">
+                <img
+                    class="additionally__card--img"
+                    src="{% static 'main/img/personal_page/Eosella.jpg' %}"
+                    alt=""
+                />
                 <div class="additionally__card--body">
                     <span class="additionally__card--price">2000</span>
                     <span class="additionally__card--text">Нарисуем красивую обложку</span>

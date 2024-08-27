@@ -9,6 +9,7 @@ urlpatterns = [
     path('events/', views.events, name='events'),
     path('catalog/', views.catalog, name='catalog'),
     path('downloads/', views.downloads, name='downloads'),
+    path('api_get/', views.api_get_view, name='api_get'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

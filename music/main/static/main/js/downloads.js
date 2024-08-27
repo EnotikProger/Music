@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formFiveAlbum = document.getElementById('formFiveAlbum'),
         formPromo = document.getElementById('formPromo'),
         formPromoAlbum = document.getElementById('formPromoAlbum'),
+        formRezaltTrack = document.getElementById('rezaltTrack'),
         addedSingl = document.querySelector('.added-singl'),
         btnAdd = document.querySelectorAll('.download__btn'),
         formAgreement = document.getElementById('formAgreement'),
@@ -183,29 +184,52 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('Промокод', newTrack.promCode);
     });
 
-    const BASE_URL = '/items/'
-    btnRezalt.addEventListener('click', async() => {
+    const BASE_URL = '/api_get/'
 
+    formRezaltTrack.addEventListener('submit', async (event) => {
+        event.preventDefault()
         console.log('Окончательный объект добавленной песни', newTrack);
         // Дальше отправка нового трека на серсер
         try {
             const res = await fetch(`${BASE_URL}`, {
             method: "POST",
-            headers: {
-                'X-CSRFToken': csrfToken,
+            headers: {              
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(newTrack),
           })
 
-          console.log('Ответ сервера', res.data);
-          btnRezalt.href = "{% url 'personal' %}"
-            //   return await response.json();
-        } catch(error) {             
-                // throw new Error(error)
-            
+          const data = await res.json();  // Декодируем ответ сервера
+          console.log('Ответ сервера', data);
+          
+        } catch(error) {                 
+            console.log('Ошибка ответа', error);
         };        
-        document.getElementById('track-message').textContent = 'Что-то пошло не так';        
-    });
+        document.getElementById('track-message').textContent = 'Что-то пошло не так'; 
+    })
+    // btnRezalt.addEventListener('click', async() => {
+
+    //     console.log('Окончательный объект добавленной песни', newTrack);
+    //     // Дальше отправка нового трека на серсер
+    //     try {
+    //         const res = await fetch(`${BASE_URL}`, {
+    //         method: "POST",
+    //         headers: {
+    //             // 'X-CSRFToken': csrfToken,
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(newTrack),
+    //       })
+
+    //       console.log('Ответ сервера', res.data);
+    //     //   btnRezalt.href = "{% url 'personal' %}"
+    //         //   return await response.json();
+    //     } catch(error) {             
+    //             // throw new Error(error)
+    //         console.log('Ошибка ответа', error);
+    //     };        
+    //     document.getElementById('track-message').textContent = 'Что-то пошло не так';        
+    // });
 
     //========= Для альбома ===========
     let imgAlbumPath = ''
@@ -539,7 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const modal = document.getElementById('modalAgreement');
         modal.dataset.name;
        
-         if (modal.dataset.name === 'trak') {
+         if (modal.dataset.name === 'track') {
             newTrack.agreement = agreement;
             btnRezalt.removeAttribute('disabled');
             modal.classList.remove('visible');  
