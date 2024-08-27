@@ -22,20 +22,22 @@
                 <button class="btn promo__btn">Ввести</button>
             </form>
         </div>
-        <form class="payment__result" id="rezaltTrack">
+        <div class="payment__result">
             {% csrf_token %}
             <span class="payment__text">К оплате 1000 </span>
             <button class="payment__btn btn agreement" type="button" id="track">
                 Подписать договор
             </button>
-            <button class="btn header__link link" id="rezalt" type="submit" disabled>
-                <span class="link__line link__line--top"></span>
-                <span class="link__line link__line--right"></span>
-                <span class="link__line link__line--bottom"></span>
-                <span class="link__line link__line--left"></span>
-                Оплатить
-            </button>
-        </form>
+            <form id="rezaltTrack">
+                <button class="btn header__link link" id="rezalt" type="submit" disabled>
+                    <span class="link__line link__line--top"></span>
+                    <span class="link__line link__line--right"></span>
+                    <span class="link__line link__line--bottom"></span>
+                    <span class="link__line link__line--left"></span>
+                    Оплатить
+                </button>
+            </form>
+        </div>
         <p class="rezalt-message" id="track-message"></p>
         <div class="additionally">
             <div class="additionally__card">

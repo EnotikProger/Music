@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formPromo = document.getElementById('formPromo'),
         formPromoAlbum = document.getElementById('formPromoAlbum'),
         formRezaltTrack = document.getElementById('rezaltTrack'),
+        formRezaltAlbum = document.getElementById('rezaltAlbum'),
         addedSingl = document.querySelector('.added-singl'),
         btnAdd = document.querySelectorAll('.download__btn'),
         formAgreement = document.getElementById('formAgreement'),
@@ -207,30 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };        
         document.getElementById('track-message').textContent = 'Что-то пошло не так'; 
     })
-    // btnRezalt.addEventListener('click', async() => {
-
-    //     console.log('Окончательный объект добавленной песни', newTrack);
-    //     // Дальше отправка нового трека на серсер
-    //     try {
-    //         const res = await fetch(`${BASE_URL}`, {
-    //         method: "POST",
-    //         headers: {
-    //             // 'X-CSRFToken': csrfToken,
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(newTrack),
-    //       })
-
-    //       console.log('Ответ сервера', res.data);
-    //     //   btnRezalt.href = "{% url 'personal' %}"
-    //         //   return await response.json();
-    //     } catch(error) {             
-    //             // throw new Error(error)
-    //         console.log('Ошибка ответа', error);
-    //     };        
-    //     document.getElementById('track-message').textContent = 'Что-то пошло не так';        
-    // });
-
+    
     //========= Для альбома ===========
     let imgAlbumPath = ''
     inputImgAlbum.addEventListener('change', function(event) { 
@@ -299,7 +277,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: '', 
                 autorSinger: '', 
                 autorMusik: '', 
-                autorText: '' 
+                autorText: '',
+                isrcTrack: '',
+                upcTrack: '',
+                text: ''
             };
 
             newAlbum.tracks.push(track);
@@ -469,6 +450,40 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </p>
                             </div>
                         </label>
+                        <label class="form-step__label" for="track-isrc${count}">
+                            <p>ISRC</p>
+                            <input class="form-step__input" type="text" id="track-isrc${count}">
+                            <div class="tultip">
+                                <button class="tultip__btn" type="button">
+                                    <svg class="tultip__icon">
+                                        <use xlink:href="#tultip"></use>
+                                    </svg>
+                                </button>
+                                <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing
+                                    elit.
+                                    Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                                    pariatur
+                                </p>
+                            </div>
+                        </label>
+                        <label class="form-step__label" for="track-upc${count}">
+                            <p>UPC</p>
+                            <input class="form-step__input" type="text" id="track-upc${count}">
+                            <div class="tultip">
+                                <button class="tultip__btn" type="button">
+                                    <svg class="tultip__icon">
+                                        <use xlink:href="#tultip"></use>
+                                    </svg>
+                                </button>
+                                <p class="tultip__content">Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing
+                                    elit.
+                                    Necessitatibus magni modi, adipisci cumque, minus nulla tenetur
+                                    pariatur
+                                </p>
+                            </div>
+                        </label>
                     </div>
                     <button class="add-track__btn btn" type="button">
                 Еще трек</button>`
@@ -491,22 +506,62 @@ document.addEventListener("DOMContentLoaded", () => {
         
                         const fieldId = str[1].slice(-1);
                         const fieldName = str[1].slice(0, -1);
+                        
                         //По id и названию поля добавляем данные в массив треков
                         const track = newAlbum.tracks[fieldId];
                         
-                        track[fieldName] = input.value;                                                       
+                        track[fieldName] = input.value;                                                    
                     });
             };
         });
+        // Добавление блоков для текста песни по кол-ву треков
+        newAlbum.tracks.forEach(track => {            
+            document.querySelector('#tracksText').appendChild(addTextBlock(track.name, track.id))
+        })
         console.log('Новый альбом шаг 3', newAlbum); 
     })
+    
+    //Создание блоков для текста песни по кол-ву треков
+    function addTextBlock(name, count) {
+        const block = document.createElement('div');
+        block.classList.add('form-step__wrapper');
+
+        block.innerHTML = `<span class="upload-singl-text">Добавьте текст песни "${name}"</span>
+
+                <label class="form-step__label form-step__label--area" for="text${count}">
+                    <textarea class="form-step__textarea" id="text${count}" rows="10"></textarea>
+
+                    <div class="tultip">
+                        <button class="tultip__btn" type="button">
+                            <svg class="tultip__icon">
+                                <use xlink:href="#tultip"></use>
+                            </svg>
+                        </button>
+                        <p class="tultip__content">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+                            magni modi, adipisci cumque, minus nulla tenetur pariatur
+                        </p>
+                    </div>
+                </label>`
+        return block
+    }
 
     formFourAlbum.addEventListener('submit', (event) => {
-        event.preventDefault();        
-        
-        newAlbum.isrc = document.getElementById('isrc-album').value; //ISRC
-        newAlbum.upc = document.getElementById('upc-album').value; //UPC
-        
+        event.preventDefault();   
+        const block = document.querySelector('#tracksText') 
+        if (block) {
+           
+        const inputs = block.querySelectorAll('.form-step__textarea');
+            
+                    inputs.forEach(input => { 
+                        const fieldId = input.id.slice(-1);                   
+                        
+                        //По id и названию поля добавляем данные в массив треков
+                        const track = newAlbum.tracks[fieldId];
+                        
+                        track.text = input.value;                   
+                    })        
+                }
         console.log('Новый альбом шаг 4', newAlbum);       
     });
 
@@ -561,7 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const modal = document.getElementById('modalAgreement');
-        modal.dataset.name;
+        console.log(modal.dataset.name)
        
          if (modal.dataset.name === 'track') {
             newTrack.agreement = agreement;
@@ -573,36 +628,34 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.classList.remove('visible');  
          } 
 
-        console.log('Новый трек реквизиты договора', agreement); 
-        document.querySelector('.modal').classList.remove('visible');       
+        console.log('Реквизиты договора', agreement);               
     });
 
-    btnRezaltAlbum.addEventListener('click', async() => {
-
+    formRezaltAlbum.addEventListener('click', async(event) => {
+        event.preventDefault();
         console.log('Окончательный объект добавленной альбома', newAlbum);
         // Дальше отправка нового трека на сервер
         // headers: {
-            //   "Content-Type": "application/json",              
-            // },
+        //       "Content-Type": "application/json",              
+        //     },
         try {
             const res = await fetch(`${BASE_URL}`, {
             method: "POST",
             headers: {
-                'X-CSRFToken': csrfToken,
+                // 'X-CSRFToken': csrfToken,
+                "Content-Type": "application/json",
             },
             
             body: JSON.stringify(newAlbum),
           })
 
-          console.log('Ответ сервера', res.data);
-          btnRezaltAlbum.href = "{% url 'personal' %}"
-            //   return await response.json();
-        } catch(error) {           
-                
-                throw new Error(error)
+          const data = await res.json();  // Декодируем ответ сервера
+          console.log('Ответ сервера', data);
+        } catch(error) {        
+                console.log('Ошибка при отправке альбома', error);
+                // throw new Error(error)
         }; 
 
-        document.getElementById('album-message').textContent = 'Что-то пошло не так';
-               
+        document.getElementById('album-message').textContent = 'Что-то пошло не так';               
     });
 })

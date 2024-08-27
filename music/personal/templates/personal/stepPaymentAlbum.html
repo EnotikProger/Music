@@ -11,7 +11,7 @@
                     <span class="payment__autor payment__autor-album"></span>
                 </div>
             </div>
-            <form class="promo__form" action="POST" id="formPromoAlbum">
+            <form class="promo__form" id="formPromoAlbum">
                 <label class="promo__label" for="promo">
                     <input class="promo__input" type="text" id="promoAlbum"
                         placeholder="Введите промокод">
@@ -19,16 +19,19 @@
                 <button class="btn promo__btn">Ввести</button>
             </form>
         </div>
-        <div class="payment__result">
+        <div class="payment__result">        
             <span class="payment__text">К оплате 2000 </span>
-            <button class="payment__btn btn agreement" id="alb">
+            <button class="payment__btn btn agreement" type="button" id="alb">
                 Подписать договор</button>
-            <button class="btn header__link link" id="rezalt-album" disabled>
+            <form id="rezaltAlbum">
+                {% csrf_token %}
+                <button class="btn header__link link" type="submit" id="rezalt-album" disabled>
                 <span class="link__line link__line--top"></span>
                 <span class="link__line link__line--right"></span>
                 <span class="link__line link__line--bottom"></span>
                 <span class="link__line link__line--left"></span>
                 Оплатить</button>
+            </form>
         </div>
         <p class="rezalt-message" id="album-message">
         </p>
