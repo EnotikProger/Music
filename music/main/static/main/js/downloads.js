@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let newTrack = {}; // Объект для нового трека
     let newAlbum = {}; // Объект для нового альбома
-    const csrfToken = '{{ csrf_token }}';  // Получаем CSRF токен
-
+ 
     // настройка Выбора жанра
     const genre = document.getElementById('genre');
     if (genre) {
@@ -115,11 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();         
 
         newTrack.genre = document.getElementById('genre').value;  //Жанр
-        newTrack.img =   inputImg.value;      //Обложка
-        newTrack.singer =   document.getElementById('name').value;  //Имя исполнителя
+        newTrack.cover_image =   inputImg.value;      //Обложка
+        newTrack.artist =   document.getElementById('name').value;  //Имя исполнителя
         newTrack.title =   document.getElementById('title').value;    //Название трека
-        newTrack.date =   document.getElementById('date').value;    //Дата релиза
-        newTrack.dateTik =   document.getElementById('data-tik').value; //Дата релиза в Тик-ток
+        newTrack.release_date =   document.getElementById('date').value;    //Дата релиза
+        newTrack.tiktok_release_date =   document.getElementById('data-tik').value; //Дата релиза в Тик-ток
         console.log('Новый трек шаг 2', newTrack);
     });
 
@@ -140,9 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Читаем файл как Data URL (base64)
             reader.readAsDataURL(file);  
             //Передать введенное на 2 шаге
-            document.querySelector('.added-singl__name').textContent = newTrack.name;
+            document.querySelector('.added-singl__name').textContent = newTrack.title;
             document.querySelector('.added-singl__img').src = imgPath;
-            document.querySelector('.added-singl__autor').textContent = newTrack.singer;
+            document.querySelector('.added-singl__autor').textContent = newTrack.artist;
             addedSingl.style.display = 'flex';              
         };
     });
@@ -150,32 +149,34 @@ document.addEventListener("DOMContentLoaded", () => {
     formThree.addEventListener('submit', (event) => {
         event.preventDefault();       
 
-        newTrack.audio = inputAudio.value; //Аудио файл
+        newTrack.wav_file = inputAudio.value; //Аудио файл
         console.log('Новый трек шаг 3', newTrack);
     })
 
     formFour.addEventListener('submit', (event) => {
         event.preventDefault();   
 
-        newTrack.autorMusik =   document.getElementById('autor-musik').value; //Имя автора музыки
-        newTrack.autorText =   document.getElementById('autor-text').value; //Имя автора текста
+        newTrack.music_author =   document.getElementById('autor-musik').value; //Имя автора музыки
+        newTrack.lyrics_author =   document.getElementById('autor-text').value; //Имя автора текста
         newTrack.isrc =   document.getElementById('isrc').value; //ISRC
         newTrack.upc =   document.getElementById('upc').value; //UPC
-        newTrack.text =   document.getElementById('text').value; //Текст песни
+        newTrack.lyrics =   document.getElementById('text').value; //Текст песни
         console.log('Новый трек шаг 4', newTrack);
     });
 
     formFive.addEventListener('submit', (event) => {
         event.preventDefault();     
-        newTrack.linkSingerOne =   document.getElementById('link-1').value; //Ссылка на карточку исполнителя в
-        newTrack.linkSingerTwo =   document.getElementById('link-2').value; //Ссылка на карточку исполнителя в
-        newTrack.linkSingerThree =   document.getElementById('link-3').value; //Ссылка на карточку исполнителя в
+        newTrack.important_info = {
+            linkSingerOne: document.getElementById('link-1').value, //Ссылка на карточку исполнителя в
+            linkSingerTwo: document.getElementById('link-2').value, //Ссылка на карточку исполнителя в
+            linkSingerThree: document.getElementById('link-3').value,
+        } //Ссылка на карточку исполнителя в
         console.log('Новый трек шаг 5', newTrack);  
 
         // Добавляем отображение названия и обложки с шага 2
-        document.querySelector('.payment__name').textContent = newTrack.name;
+        document.querySelector('.payment__name').textContent = newTrack.title;
         document.querySelector('.payment__img').src = imgPath;
-        document.querySelector('.payment__autor').textContent = newTrack.singer;        
+        document.querySelector('.payment__autor').textContent = newTrack.artist;        
     });
 
     formPromo.addEventListener('submit', (event) => {
@@ -186,27 +187,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const BASE_URL = '/api_get/'
+     // Получаем CSRF токен из cookie
+     function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    const csrftoken = getCookie('csrftoken');
 
     formRezaltTrack.addEventListener('submit', async (event) => {
         event.preventDefault()
-        console.log('Окончательный объект добавленной песни', newTrack);
+        console.log('Окончательный объект добавленной песни', JSON.stringify(newTrack));
         // Дальше отправка нового трека на серсер
         try {
             const res = await fetch(`${BASE_URL}`, {
             method: "POST",
             headers: {              
                 "Content-Type": "application/json",
+                'X-CSRFToken': `${csrftoken}`
             },
             body: JSON.stringify(newTrack),
           })
 
           const data = await res.json();  // Декодируем ответ сервера
           console.log('Ответ сервера', data);
-          
+          document.getElementById('track-message').textContent = 'Все хорошо'; 
         } catch(error) {                 
             console.log('Ошибка ответа', error);
+            document.getElementById('track-message').textContent = 'Что-то пошло не так'; 
         };        
-        document.getElementById('track-message').textContent = 'Что-то пошло не так'; 
     })
     
     //========= Для альбома ===========
